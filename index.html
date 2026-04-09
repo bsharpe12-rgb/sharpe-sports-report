@@ -1,211 +1,139 @@
-/* ============================================================
-   1. GLOBAL STYLES & ACCESSIBILITY
-   ============================================================ */
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    /* AUDIT REQUIREMENT: Body text ideally 18px */
-    font-size: 18px; 
-    /* AUDIT REQUIREMENT: Line spacing at least 1.5 */
-    line-height: 1.6; 
-    margin: 0;
-    padding: 0;
-    background-color: #eef2f3;
-    color: #222;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO REQUIREMENT: Meta Description -->
+    <meta name="description" content="Sharpe Sports Report: Your community for the latest sports podcast news and fan discussions.">
+    <title>Sharpe Sports Report Community</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!-- REQUIREMENT: Logo (Using a reliable Wikimedia SVG link) -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="https://wikimedia.org" 
+                     alt="Sharpe Sports Report Official Logo - Soccer Ball" class="logo">
+            </a>
+            <h1>Welcome to the Sharpe Sports Report Community</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#podcasts">Podcasts</a></li>
+                <li><a href="#scores">Scores</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-/* ============================================================
-   2. HEADER & NAVIGATION
-   ============================================================ */
-header {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 2rem 0;
-    text-align: center;
-    border-bottom: 5px solid #d40000; /* High contrast sports-red accent */
-}
+    <main>
+        <section id="home">
+            <h2>Latest News</h2>
+            <!-- REQUIREMENT: Image 1 - Stadium -->
+            <img src="https://wikimedia.org" 
+                 alt="A wide view of a modern sports stadium at night under bright lights" class="feature-img">
+            <p>Check out the latest updates from your favorite sports podcasts!</p>
+            
+            <!-- REQUIREMENT: At least 3 external links -->
+            <p>Follow major league updates at: 
+                <a href="https://espn.com" target="_blank">ESPN</a>, 
+                <a href="https://nfl.com" target="_blank">NFL</a>, and 
+                <a href="https://nba.com" target="_blank">NBA</a>.
+            </p>
+        </section>
 
-/* Updated for Wikimedia Logo */
-.logo {
-    width: 80px; 
-    height: 80px;
-    background-color: white; /* Ensures the transparent SVG is visible */
-    padding: 5px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
-}
+        <!-- REQUIREMENT: At least one HTML table element -->
+        <section id="scores">
+            <h2>Recent Game Scores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Matchup</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Oct 24</td>
+                        <td>Team A vs Team B</td>
+                        <td>24 - 17</td>
+                    </tr>
+                    <tr>
+                        <td>Oct 25</td>
+                        <td>Team C vs Team D</td>
+                        <td>102 - 98</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-.logo:hover {
-    transform: scale(1.1);
-}
+        <section id="podcasts">
+            <h2>Featured Podcasts</h2>
+            <!-- REQUIREMENT: Image 2 - Microphone -->
+            <img src="https://wikimedia.org" 
+                 alt="Professional studio microphone on a stand" class="feature-img">
+            <article>
+                <h3>Podcast Title One</h3>
+                <p>Detailed analysis of this week's highlights and expert commentary on the latest sports trends.</p>
+            </article>
+        </section>
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
+        <section id="community">
+            <h2>Community Feed</h2>
+            <!-- REQUIREMENT: Image 3 - Basketball -->
+            <img src="https://wikimedia.org" 
+                 alt="Dynamic action shot of a professional basketball game in progress" class="feature-img">
+            <p>Share your thoughts on the latest games and connect with other enthusiasts!</p>
+            
+            <!-- REQUIREMENT: At least one HTML form element -->
+            <form id="postForm">
+                <!-- ACCESSIBILITY: Explicit Labels -->
+                <label for="username">Display Name:</label>
+                <input type="text" id="username" placeholder="Your Name" required>
+                
+                <label for="postContent">Your Thoughts:</label>
+                <textarea id="postContent" placeholder="Write your blog post here..." required></textarea>
+                
+                <button type="submit">Post to Community</button>
+            </form>
 
-nav ul li {
-    display: inline-block;
-    margin: 10px 20px;
-}
+            <div id="postDisplay">
+                <article class="community-post">
+                    <h4>Admin</h4>
+                    <p>Welcome to the Sharpe Sports Report community! Start the conversation above.</p>
+                </article>
+            </div>
+        </section>
+    </main>
 
-/* AUDIT REQUIREMENT: Anchor text clear & navigation intuitive */
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 16px;
-    padding: 5px;
-}
+    <footer>
+        <p>&copy; 2026 Sharpe Sports Report Community. All Rights Reserved.</p>
+    </footer>
 
-/* AUDIT REQUIREMENT: Contrast ratio for links & Keyboard visibility */
-nav a:hover, nav a:focus {
-    color: #d40000;
-    outline: 2px solid #d40000;
-    border-radius: 4px;
-}
+    <!-- JavaScript for interactivity and success message -->
+    <script>
+        const postForm = document.getElementById('postForm');
+        const postDisplay = document.getElementById('postDisplay');
 
-/* ============================================================
-   3. MAIN CONTENT & RESPONSIVENESS
-   ============================================================ */
-main {
-    max-width: 900px;
-    /* AUDIT REQUIREMENT: Mobile friendly/fluid layout */
-    width: 90%; 
-    margin: 30px auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* Updated for Wikimedia Images */
-.feature-img {
-    width: 100%;
-    max-height: 450px;    /* Prevents oversized images */
-    object-fit: cover;    /* Crops images neatly to maintain aspect ratio */
-    border-radius: 8px;
-    margin: 25px 0;
-    display: block;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* ============================================================
-   4. TABLES & DATA (Project Deliverables)
-   ============================================================ */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    background-color: #fff;
-}
-
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-table th {
-    background-color: #1a1a1a;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Zebra striping for better readability (Accessibility) */
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* ============================================================
-   5. FORMS & COMMUNITY INTERACTION
-   ============================================================ */
-#postForm label {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #1a1a1a;
-}
-
-/* AUDIT REQUIREMENT: Form fields clearly labeled and mobile friendly */
-#postForm input, #postForm textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-    /* AUDIT REQUIREMENT: Ensures inputs don't break layout on mobile */
-    box-sizing: border-box; 
-}
-
-button {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 14px 28px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background-color: #d40000;
-}
-
-/* Style for the generated community posts */
-.community-post {
-    background: #f9f9f9;
-    padding: 20px;
-    margin-top: 20px;
-    border-left: 6px solid #d40000;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-/* ============================================================
-   6. FOOTER
-   ============================================================ */
-footer {
-    text-align: center;
-    padding: 50px 20px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* ============================================================
-   7. MOBILE MEDIA QUERIES (Industry Standard)
-   ============================================================ */
-@media (max-width: 600px) {
-    nav ul li {
-        display: block; 
-        margin: 15px 0;
-    }
-
-    header h1 {
-        font-size: 1.4rem;
-        padding: 0 15px;
-    }
-
-    main {
-        width: 95%;
-        padding: 15px;
-    }
-
-    /* AUDIT REQUIREMENT: Mobile menu tap targets (at least 46px) */
-    nav a {
-        display: block;
-        padding: 12px;
-    }
-    
-    .feature-img {
-        max-height: 250px; /* Smaller image height on mobile */
-    }
-}
-
+        postForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('username').value;
+            const content = document.getElementById('postContent').value;
+            
+            const newPost = document.createElement('article');
+            newPost.className = "community-post";
+            newPost.innerHTML = `<h4>${name}</h4><p>${content}</p>`;
+            
+            postDisplay.prepend(newPost);
+            postForm.reset();
+            
+            // REQUIREMENT: Success message upon submission
+            alert("Success! Your community post has been added.");
+        });
+    </script>
+</body>
+</html>
