@@ -112,4 +112,28 @@ footer {
         padding: 10px;
     }
 }
+/* Styling for the Logo */
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Styling for Feature Images - ensures they are responsive */
+.feature-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    display: block;
+}
+
+/* Community post specific styles */
+.community-post {
+    border-left: 4px solid #d40000;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background: #f9f9f9;
+}
 
