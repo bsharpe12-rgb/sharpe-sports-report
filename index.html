@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO REQUIREMENT: Meta Description -->
     <meta name="description" content="Sharpe Sports Report: Your community for the latest sports podcast news and fan discussions.">
     <title>Sharpe Sports Report Community</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <!-- REQUIREMENT: Logo (Using a direct Pexels image link) -->
         <div class="logo-container">
             <a href="index.html">
-                <img src="https://pexels.com" 
-                     alt="Sharpe Sports Report Official Logo - Soccer Ball on Field" class="logo">
+                <img src="https://wikimedia.org" 
+                     alt="Sharpe Sports Report Official Logo - Soccer Ball" class="logo">
             </a>
             <h1>Welcome to the Sharpe Sports Report Community</h1>
         </div>
@@ -32,12 +30,10 @@
     <main>
         <section id="home">
             <h2>Latest News</h2>
-            <!-- REQUIREMENT: Image 1 - Stadium -->
-            <img src="https://pexels.com" 
+            <img src="https://wikimedia.org" 
                  alt="A wide view of a modern sports stadium at night under bright lights" class="feature-img">
             <p>Check out the latest updates from your favorite sports podcasts!</p>
             
-            <!-- REQUIREMENT: At least 3 external links -->
             <p>Follow major league updates at: 
                 <a href="https://espn.com" target="_blank">ESPN</a>, 
                 <a href="https://nfl.com" target="_blank">NFL</a>, and 
@@ -45,10 +41,9 @@
             </p>
         </section>
 
-        <!-- REQUIREMENT: At least one HTML table element -->
         <section id="scores">
             <h2>Recent Game Scores</h2>
-            <table border="1">
+            <table>
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -73,25 +68,21 @@
 
         <section id="podcasts">
             <h2>Featured Podcasts</h2>
-            <!-- REQUIREMENT: Image 2 - Microphone -->
-            <img src="https://pexels.com" 
+            <img src="https://wikimedia.org" 
                  alt="Professional studio microphone on a stand" class="feature-img">
             <article>
                 <h3>Podcast Title One</h3>
-                <p>Detailed analysis of this week's highlights and expert commentary.</p>
+                <p>Detailed analysis of this week's highlights and expert commentary on the latest sports trends.</p>
             </article>
         </section>
 
         <section id="community">
             <h2>Community Feed</h2>
-            <!-- REQUIREMENT: Image 3 - Basketball -->
-            <img src="https://pexels.com" 
-                 alt="Dynamic action shot of a basketball player jumping for a dunk" class="feature-img">
-            <p>Share your thoughts on the latest games!</p>
+            <img src="https://wikimedia.org" 
+                 alt="Dynamic action shot of a professional basketball game in progress" class="feature-img">
+            <p>Share your thoughts on the latest games and connect with other enthusiasts!</p>
             
-            <!-- REQUIREMENT: At least one HTML form element -->
             <form id="postForm">
-                <!-- ACCESSIBILITY: Explicit Labels -->
                 <label for="username">Display Name:</label>
                 <input type="text" id="username" placeholder="Your Name" required>
                 
@@ -114,7 +105,6 @@
         <p>&copy; 2026 Sharpe Sports Report Community. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript for interactivity and success message -->
     <script>
         const postForm = document.getElementById('postForm');
         const postDisplay = document.getElementById('postDisplay');
@@ -131,7 +121,6 @@
             postDisplay.prepend(newPost);
             postForm.reset();
             
-            // REQUIREMENT: Success message upon submission
             alert("Success! Your community post has been added.");
         });
     </script>
