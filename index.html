@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO REQUIREMENT: Meta Description -->
     <meta name="description" content="Sharpe Sports Report: Your community for the latest sports podcast news and fan discussions.">
     <title>Sharpe Sports Report Community</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <!-- REQUIREMENT: Logo (Using a reliable Wikimedia SVG link) -->
         <div class="logo-container">
             <a href="index.html">
+                <!-- LOGO: Direct SVG link -->
                 <img src="https://wikimedia.org" 
-                     alt="Sharpe Sports Report Official Logo - Soccer Ball" class="logo">
+                     alt="Sharpe Sports Report Official Logo" class="logo">
             </a>
             <h1>Welcome to the Sharpe Sports Report Community</h1>
         </div>
@@ -32,12 +31,10 @@
     <main>
         <section id="home">
             <h2>Latest News</h2>
-            <!-- REQUIREMENT: Image 1 - Stadium -->
+            <!-- IMAGE 1: Direct Stadium Thumbnail -->
             <img src="https://wikimedia.org" 
-                 alt="A wide view of a modern sports stadium at night under bright lights" class="feature-img">
+                 alt="View of a modern sports stadium" class="feature-img">
             <p>Check out the latest updates from your favorite sports podcasts!</p>
-            
-            <!-- REQUIREMENT: At least 3 external links -->
             <p>Follow major league updates at: 
                 <a href="https://espn.com" target="_blank">ESPN</a>, 
                 <a href="https://nfl.com" target="_blank">NFL</a>, and 
@@ -45,7 +42,6 @@
             </p>
         </section>
 
-        <!-- REQUIREMENT: At least one HTML table element -->
         <section id="scores">
             <h2>Recent Game Scores</h2>
             <table>
@@ -57,54 +53,42 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Oct 24</td>
-                        <td>Team A vs Team B</td>
-                        <td>24 - 17</td>
-                    </tr>
-                    <tr>
-                        <td>Oct 25</td>
-                        <td>Team C vs Team D</td>
-                        <td>102 - 98</td>
-                    </tr>
+                    <tr><td>Oct 24</td><td>Team A vs Team B</td><td>24 - 17</td></tr>
+                    <tr><td>Oct 25</td><td>Team C vs Team D</td><td>102 - 98</td></tr>
                 </tbody>
             </table>
         </section>
 
         <section id="podcasts">
             <h2>Featured Podcasts</h2>
-            <!-- REQUIREMENT: Image 2 - Microphone -->
+            <!-- IMAGE 2: Direct Microphone Thumbnail -->
             <img src="https://wikimedia.org" 
-                 alt="Professional studio microphone on a stand" class="feature-img">
+                 alt="Professional studio microphone" class="feature-img">
             <article>
                 <h3>Podcast Title One</h3>
-                <p>Detailed analysis of this week's highlights and expert commentary on the latest sports trends.</p>
+                <p>Detailed analysis of this week's highlights and expert commentary.</p>
             </article>
         </section>
 
         <section id="community">
             <h2>Community Feed</h2>
-            <!-- REQUIREMENT: Image 3 - Basketball -->
+            <!-- IMAGE 3: Direct Basketball Thumbnail -->
             <img src="https://wikimedia.org" 
-                 alt="Dynamic action shot of a professional basketball game in progress" class="feature-img">
-            <p>Share your thoughts on the latest games and connect with other enthusiasts!</p>
+                 alt="Basketball action shot" class="feature-img">
+            <p>Share your thoughts on the latest games!</p>
             
-            <!-- REQUIREMENT: At least one HTML form element -->
             <form id="postForm">
-                <!-- ACCESSIBILITY: Explicit Labels -->
                 <label for="username">Display Name:</label>
                 <input type="text" id="username" placeholder="Your Name" required>
-                
                 <label for="postContent">Your Thoughts:</label>
                 <textarea id="postContent" placeholder="Write your blog post here..." required></textarea>
-                
                 <button type="submit">Post to Community</button>
             </form>
 
             <div id="postDisplay">
                 <article class="community-post">
                     <h4>Admin</h4>
-                    <p>Welcome to the Sharpe Sports Report community! Start the conversation above.</p>
+                    <p>Welcome to the Sharpe Sports Report community!</p>
                 </article>
             </div>
         </section>
@@ -114,7 +98,6 @@
         <p>&copy; 2026 Sharpe Sports Report Community. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript for interactivity and success message -->
     <script>
         const postForm = document.getElementById('postForm');
         const postDisplay = document.getElementById('postDisplay');
@@ -123,17 +106,14 @@
             e.preventDefault();
             const name = document.getElementById('username').value;
             const content = document.getElementById('postContent').value;
-            
             const newPost = document.createElement('article');
             newPost.className = "community-post";
             newPost.innerHTML = `<h4>${name}</h4><p>${content}</p>`;
-            
             postDisplay.prepend(newPost);
             postForm.reset();
-            
-            // REQUIREMENT: Success message upon submission
             alert("Success! Your community post has been added.");
         });
     </script>
 </body>
 </html>
+
