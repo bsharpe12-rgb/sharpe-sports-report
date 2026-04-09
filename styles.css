@@ -1,11 +1,15 @@
+/* 1. Base Styles - Updated for Audit Requirements */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
+    font-size: 18px; /* REQUIREMENT: Body text at least 16px (ideally 18px) */
+    line-height: 1.6; /* REQUIREMENT: Line spacing at least 1.5 */
     margin: 0;
     padding: 0;
     background-color: #eef2f3;
     color: #222;
 }
+
+/* 2. Header & Navigation */
 header {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -20,8 +24,8 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 20px;
+    display: inline-block; /* Better for spacing */
+    margin: 10px 20px;
 }
 
 nav a {
@@ -31,17 +35,42 @@ nav a {
     text-transform: uppercase;
 }
 
-nav a:hover {
+/* REQUIREMENT: Anchor text clear/Focus state for keyboard navigation */
+nav a:hover, nav a:focus {
     color: #d40000;
+    outline: 2px solid #d40000;
 }
+
+/* 3. Main Container - Responsive Layout */
 main {
     max-width: 900px;
+    width: 90%; /* REQUIREMENT: Fluid layout for different screen sizes */
     margin: 30px auto;
-    padding: 30px;
+    padding: 20px;
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
+/* 4. Table Styling - NEW for Project Deliverables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* 5. Community & Form Elements */
 #community {
     border-top: 2px solid #eee;
     padding-top: 20px;
@@ -51,6 +80,8 @@ main {
     border: 2px solid #ddd;
     border-radius: 6px;
     font-size: 1rem;
+    width: 100%; /* Ensures mobile friendly width */
+    box-sizing: border-box; /* Prevents padding from breaking width */
 }
 
 #postDisplay article {
@@ -61,9 +92,24 @@ main {
     border-radius: 0 8px 8px 0;
 }
 
+/* 6. Footer */
 footer {
     text-align: center;
     padding: 40px;
     font-size: 0.9rem;
     color: #666;
 }
+
+/* 7. Mobile Friendly Media Query */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block; /* Stacks menu items on small screens */
+        margin: 10px 0;
+    }
+    
+    main {
+        width: 95%;
+        padding: 10px;
+    }
+}
+
