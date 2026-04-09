@@ -1,6 +1,11 @@
+/* ============================================================
+   1. GLOBAL STYLES & ACCESSIBILITY
+   ============================================================ */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
+    /* AUDIT REQUIREMENT: Body text ideally 18px */
     font-size: 18px; 
+    /* AUDIT REQUIREMENT: Line spacing at least 1.5 */
     line-height: 1.6; 
     margin: 0;
     padding: 0;
@@ -8,17 +13,23 @@ body {
     color: #222;
 }
 
+/* ============================================================
+   2. HEADER & NAVIGATION
+   ============================================================ */
 header {
     background-color: #1a1a1a;
     color: #ffffff;
     padding: 2rem 0;
     text-align: center;
-    border-bottom: 5px solid #d40000;
+    border-bottom: 5px solid #d40000; /* High contrast sports-red accent */
 }
 
+/* Updated for Wikimedia Logo */
 .logo {
     width: 80px; 
     height: 80px;
+    background-color: white; /* Ensures the transparent SVG is visible */
+    padding: 5px;
     border-radius: 50%;
     border: 2px solid #fff;
     margin-bottom: 10px;
@@ -39,6 +50,7 @@ nav ul li {
     margin: 10px 20px;
 }
 
+/* AUDIT REQUIREMENT: Anchor text clear & navigation intuitive */
 nav a {
     color: #ffffff;
     text-decoration: none;
@@ -48,14 +60,19 @@ nav a {
     padding: 5px;
 }
 
+/* AUDIT REQUIREMENT: Contrast ratio for links & Keyboard visibility */
 nav a:hover, nav a:focus {
     color: #d40000;
     outline: 2px solid #d40000;
     border-radius: 4px;
 }
 
+/* ============================================================
+   3. MAIN CONTENT & RESPONSIVENESS
+   ============================================================ */
 main {
     max-width: 900px;
+    /* AUDIT REQUIREMENT: Mobile friendly/fluid layout */
     width: 90%; 
     margin: 30px auto;
     padding: 20px;
@@ -64,15 +81,20 @@ main {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Updated for Wikimedia Images */
 .feature-img {
     width: 100%;
-    height: auto;
+    max-height: 450px;    /* Prevents oversized images */
+    object-fit: cover;    /* Crops images neatly to maintain aspect ratio */
     border-radius: 8px;
     margin: 25px 0;
     display: block;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* ============================================================
+   4. TABLES & DATA (Project Deliverables)
+   ============================================================ */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -93,10 +115,14 @@ table th {
     letter-spacing: 1px;
 }
 
+/* Zebra striping for better readability (Accessibility) */
 table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+/* ============================================================
+   5. FORMS & COMMUNITY INTERACTION
+   ============================================================ */
 #postForm label {
     display: block;
     margin-top: 20px;
@@ -104,6 +130,7 @@ table tr:nth-child(even) {
     color: #1a1a1a;
 }
 
+/* AUDIT REQUIREMENT: Form fields clearly labeled and mobile friendly */
 #postForm input, #postForm textarea {
     width: 100%;
     padding: 12px;
@@ -111,6 +138,7 @@ table tr:nth-child(even) {
     border: 2px solid #ddd;
     border-radius: 6px;
     font-size: 16px;
+    /* AUDIT REQUIREMENT: Ensures inputs don't break layout on mobile */
     box-sizing: border-box; 
 }
 
@@ -131,6 +159,7 @@ button:hover {
     background-color: #d40000;
 }
 
+/* Style for the generated community posts */
 .community-post {
     background: #f9f9f9;
     padding: 20px;
@@ -140,14 +169,19 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
+/* ============================================================
+   6. FOOTER
+   ============================================================ */
 footer {
     text-align: center;
     padding: 50px 20px;
     font-size: 0.9rem;
     color: #666;
-    background-color: #eef2f3;
 }
 
+/* ============================================================
+   7. MOBILE MEDIA QUERIES (Industry Standard)
+   ============================================================ */
 @media (max-width: 600px) {
     nav ul li {
         display: block; 
@@ -164,9 +198,14 @@ footer {
         padding: 15px;
     }
 
+    /* AUDIT REQUIREMENT: Mobile menu tap targets (at least 46px) */
     nav a {
         display: block;
         padding: 12px;
+    }
+    
+    .feature-img {
+        max-height: 250px; /* Smaller image height on mobile */
     }
 }
 
