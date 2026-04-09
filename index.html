@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO REQUIREMENT: Meta Description -->
+    <meta name="description" content="Sharpe Sports Report: Your community for the latest sports podcast news and fan discussions.">
     <title>Sharpe Sports Report Community</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,6 +15,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#podcasts">Podcasts</a></li>
+                <li><a href="#scores">Scores</a></li> <!-- Added link to new table -->
                 <li><a href="#community">Community</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -22,7 +25,40 @@
         <section id="home">
             <h2>Latest News</h2>
             <p>Check out the latest updates from your favorite sports podcasts!</p>
+            <!-- REQUIREMENT: At least 3 external links -->
+            <p>Follow major league updates at: 
+                <a href="https://espn.com" target="_blank">ESPN</a>, 
+                <a href="https://nfl.com" target="_blank">NFL</a>, and 
+                <a href="https://nba.com" target="_blank">NBA</a>.
+            </p>
         </section>
+
+        <!-- REQUIREMENT: At least one HTML table element -->
+        <section id="scores">
+            <h2>Recent Game Scores</h2>
+            <table border="1" style="width:100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                    <tr style="background-color: #1a1a1a; color: white;">
+                        <th>Date</th>
+                        <th>Matchup</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Oct 24</td>
+                        <td>Team A vs Team B</td>
+                        <td>24 - 17</td>
+                    </tr>
+                    <tr>
+                        <td>Oct 25</td>
+                        <td>Team C vs Team D</td>
+                        <td>102 - 98</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
         <section id="podcasts">
             <h2>Featured Podcasts</h2>
             <article>
@@ -34,51 +70,51 @@
                 <p>Description of the podcast goes here.</p>
             </article>
         </section>
+
         <section id="community">
-    <h2>Community Feed</h2>
-    <p>Share your thoughts on the latest games!</p>
-    
-    <!-- Blog Post Form -->
-    <form id="postForm" style="margin-bottom: 20px;">
-        <input type="text" id="username" placeholder="Your Name" required style="display: block; margin-bottom: 10px; width: 100%; padding: 8px;">
-        <textarea id="postContent" placeholder="Write your blog post here..." required style="display: block; margin-bottom: 10px; width: 100%; height: 100px; padding: 8px;"></textarea>
-        <button type="submit" style="background: #1a1a1a; color: white; padding: 10px 20px; border: none; cursor: pointer;">Post to Community</button>
-    </form>
+            <h2>Community Feed</h2>
+            <p>Share your thoughts on the latest games!</p>
+            
+            <form id="postForm" style="margin-bottom: 20px;">
+                <!-- ACCESSIBILITY REQUIREMENT: Clear Labels -->
+                <label for="username">Display Name:</label>
+                <input type="text" id="username" placeholder="Your Name" required style="display: block; margin-bottom: 10px; width: 100%; padding: 8px;">
+                
+                <label for="postContent">Your Thoughts:</label>
+                <textarea id="postContent" placeholder="Write your blog post here..." required style="display: block; margin-bottom: 10px; width: 100%; height: 100px; padding: 8px;"></textarea>
+                
+                <button type="submit" style="background: #1a1a1a; color: white; padding: 10px 20px; border: none; cursor: pointer;">Post to Community</button>
+            </form>
 
-    <!-- Where the posts will show up -->
-    <div id="postDisplay">
-        <article style="border-left: 4px solid #1a1a1a; padding-left: 15px; margin-top: 20px;">
-            <h4>Admin</h4>
-            <p>Welcome to the Sharpe Sports Report community! Start the conversation above.</p>
-        </article>
-    </div>
-</section>
-
+            <div id="postDisplay">
+                <article style="border-left: 4px solid #1a1a1a; padding-left: 15px; margin-top: 20px;">
+                    <h4>Admin</h4>
+                    <p>Welcome to the Sharpe Sports Report community! Start the conversation above.</p>
+                </article>
+            </div>
+        </section>
     </main>
+
     <footer>
         <p>&copy; 2026 Sharpe Sports Report Community. All Rights Reserved.</p>
     </footer>
+
     <script>
-    const postForm = document.getElementById('postForm');
-    const postDisplay = document.getElementById('postDisplay');
+        const postForm = document.getElementById('postForm');
+        const postDisplay = document.getElementById('postDisplay');
 
-    postForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('username').value;
-        const content = document.getElementById('postContent').value;
-
-        // Create a new post element
-        const newPost = document.createElement('article');
-        newPost.innerHTML = `<h4>${name}</h4><p>${content}</p>`;
-        
-        // Add it to the top of the feed
-        postDisplay.prepend(newPost);
-
-        // Clear the form
-        postForm.reset();
-    });
-</script>
-
+        postForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('username').value;
+            const content = document.getElementById('postContent').value;
+            const newPost = document.createElement('article');
+            newPost.style = "border-left: 4px solid #1a1a1a; padding-left: 15px; margin-top: 20px; background: #f9f9f9; padding: 10px;";
+            newPost.innerHTML = `<h4>${name}</h4><p>${content}</p>`;
+            postDisplay.prepend(newPost);
+            postForm.reset();
+            alert("Success! Your post has been submitted."); // REQUIREMENT: Success message
+        });
+    </script>
 </body>
 </html>
+
