@@ -11,7 +11,7 @@
     <header>
         <div class="logo-container">
             <a href="index.html">
-                <!-- LOGO: Embedded SVG Icon -->
+                <!-- LOGO SVG -->
                 <svg class="logo" viewBox="0 0 100 100" xmlns="http://w3.org">
                     <circle cx="50" cy="50" r="48" fill="#d40000" />
                     <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="28" font-weight="bold">SSR</text>
@@ -34,9 +34,13 @@
     <main>
         <section id="home">
             <h2>Latest News</h2>
-            <!-- Placeholder for Stadium Image (Keep this logic for when your links update) -->
-            <img src="https://unsplash.com" 
-                 alt="View of a modern sports stadium" class="feature-img">
+            <!-- STADIUM SVG ICON -->
+            <svg class="feature-img" viewBox="0 0 800 450" xmlns="http://w3.org">
+                <rect width="800" height="450" fill="#2d5a27" />
+                <ellipse cx="400" cy="225" rx="350" ry="180" fill="none" stroke="white" stroke-width="5" />
+                <line x1="400" y1="45" x2="400" y2="405" stroke="white" stroke-width="5" />
+                <text x="400" y="240" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="Arial" font-size="60" font-weight="bold">STADIUM VIEW</text>
+            </svg>
             <p>Check out the latest updates from your favorite sports podcasts!</p>
             <p>Follow major league updates at: 
                 <a href="https://espn.com" target="_blank">ESPN</a>, 
@@ -64,8 +68,14 @@
 
         <section id="podcasts">
             <h2>Featured Podcasts</h2>
-            <img src="https://unsplash.com" 
-                 alt="Professional studio microphone" class="feature-img">
+            <!-- MICROPHONE SVG ICON -->
+            <svg class="feature-img" viewBox="0 0 800 450" xmlns="http://w3.org">
+                <rect width="800" height="450" fill="#333" />
+                <rect x="375" y="100" width="50" height="150" rx="25" fill="#888" />
+                <rect x="395" y="250" width="10" height="100" fill="#555" />
+                <rect x="350" y="350" width="100" height="10" fill="#555" />
+                <text x="400" y="420" text-anchor="middle" fill="white" font-family="Arial" font-size="30">PODCAST STUDIO</text>
+            </svg>
             <article>
                 <h3>Podcast Title One</h3>
                 <p>Detailed analysis of this week's highlights and expert commentary.</p>
@@ -74,8 +84,14 @@
 
         <section id="community">
             <h2>Community Feed</h2>
-            <img src="https://unsplash.com" 
-                 alt="Basketball action shot" class="feature-img">
+            <!-- BASKETBALL SVG ICON -->
+            <svg class="feature-img" viewBox="0 0 800 450" xmlns="http://w3.org">
+                <rect width="800" height="450" fill="#e67e22" />
+                <circle cx="400" cy="225" r="150" fill="none" stroke="#222" stroke-width="8" />
+                <path d="M250 225 Q400 225 550 225 M400 75 Q400 225 400 375" fill="none" stroke="#222" stroke-width="8" />
+                <path d="M295 120 Q400 225 295 330 M505 120 Q400 225 505 330" fill="none" stroke="#222" stroke-width="8" />
+                <text x="400" y="50" text-anchor="middle" fill="#222" font-family="Arial" font-size="30" font-weight="bold">COMMUNITY DISCUSSIONS</text>
+            </svg>
             <p>Share your thoughts on the latest games!</p>
             
             <form id="postForm">
