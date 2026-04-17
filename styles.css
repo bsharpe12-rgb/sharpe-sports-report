@@ -1,145 +1,85 @@
-/* General Page Styling */
+/* Marketing Enhancements: Visual Hierarchy and Sticky Nav */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 18px; 
-    line-height: 1.6; 
     margin: 0;
-    padding: 0;
-    background-color: #eef2f3;
-    color: #222;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
 header {
     background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 2rem 0;
+    color: white;
+    padding: 1rem 0;
     text-align: center;
-    border-bottom: 5px solid #d40000;
+    position: sticky; /* Always visible for user engagement */
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid #d40000;
 }
 
-/* Logo Styling - Updated for SVG */
-.logo {
-    width: 80px; 
-    height: 80px;
-    margin-bottom: 10px;
+.logo { width: 60px; height: 60px; transition: transform 0.3s ease; }
+.logo:hover { transform: scale(1.1); }
+
+nav ul { list-style: none; padding: 0; margin-top: 10px; }
+nav ul li { display: inline-block; margin: 0 15px; }
+nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px; }
+nav a:hover { color: #d40000; }
+
+/* Call-To-Action (CTA) Button in Nav */
+.nav-cta {
+    background-color: #d40000;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.hero-btn {
     display: inline-block;
-    transition: transform 0.3s ease; /* Adds a smooth hover effect */
-}
-
-.logo:hover {
-    transform: scale(1.1);
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 10px 20px;
-}
-
-nav a {
-    color: #ffffff;
+    background-color: #d40000;
+    color: white;
+    padding: 15px 30px;
     text-decoration: none;
     font-weight: bold;
-    text-transform: uppercase;
+    border-radius: 5px;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(212, 0, 0, 0.4);
 }
 
-nav a:hover, nav a:focus {
-    color: #d40000;
-    outline: 2px solid #d40000;
-}
-
-main {
-    max-width: 900px;
-    width: 90%; 
-    margin: 30px auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* Updated SVG "Image" Styling */
 .feature-img {
     width: 100%;
-    height: auto; /* Required for SVGs to scale correctly */
-    aspect-ratio: 16 / 9; /* Keeps the stadium and mic shapes consistent */
-    border-radius: 8px;
-    margin: 25px 0;
-    display: block;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-/* Table and Form Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-}
-
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-table th {
-    background-color: #1a1a1a;
-    color: white;
-}
-
-#postForm label {
-    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
     margin-top: 20px;
-    font-weight: bold;
 }
 
-#postForm input, #postForm textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
+/* Zonal Layout for Engagement */
+.light-zone { background-color: #fff; padding: 40px 0; }
+.dark-zone { background-color: #1a1a1a; color: white; padding: 40px 20px; }
+
+main { max-width: 1000px; margin: auto; padding: 20px; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+table th { background: #1a1a1a; color: white; padding: 12px; }
+table td { border: 1px solid #ddd; padding: 10px; }
 
 button {
-    background-color: #1a1a1a;
+    background-color: #d40000;
     color: white;
-    padding: 14px 28px;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 20px;
-    font-weight: bold;
-    transition: background-color 0.2s;
-}
-
-button:hover { 
-    background-color: #d40000; 
-}
-
-.community-post {
-    background: #f9f9f9;
-    padding: 20px;
-    margin-top: 20px;
-    border-left: 6px solid #d40000;
+    padding: 12px 24px;
     border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-footer { 
-    text-align: center; 
-    padding: 50px 20px; 
-    color: #666; 
-}
+button:hover { background-color: #b30000; transform: translateY(-2px); }
 
-/* Responsive View for Mobile */
-@media (max-width: 600px) {
-    nav ul li { display: block; margin: 15px 0; }
-    main { width: 95%; padding: 15px; }
-    header h1 { font-size: 1.5rem; }
-}
+footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px; }
 
