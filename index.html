@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sharpe Sports Report: Your community for the latest sports podcast news and fan discussions.">
+    <meta name="description" content="Sharpe Sports Report: Podcast news and community discussions.">
     <title>Sharpe Sports Report Community</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,14 +11,13 @@
     <header>
         <div class="logo-container">
             <a href="index.html">
-                <!-- LOGO: Clean, professional SVG Logo -->
                 <svg class="logo" viewBox="0 0 100 100" xmlns="http://w3.org">
                     <circle cx="50" cy="50" r="48" fill="#d40000" />
                     <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="28" font-weight="bold">SSR</text>
                     <circle cx="50" cy="50" r="42" fill="none" stroke="white" stroke-width="2" />
                 </svg>
             </a>
-            <h1>Welcome to the Sharpe Sports Report Community</h1>
+            <h1>Sharpe Sports Report</h1>
         </div>
         <nav>
             <ul>
@@ -26,85 +25,67 @@
                 <li><a href="#podcasts">Podcasts</a></li>
                 <li><a href="#scores">Scores</a></li>
                 <li><a href="#community">Community</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <!-- CTA in Nav for marketing visibility -->
+                <li><a href="#contact" class="nav-cta">Subscribe</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h2>Latest News</h2>
-            <!-- IMAGE: Professional Modern Stadium -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h2>The Pulse of the Game</h2>
+                <p>Join the fastest-growing community for sports podcast fans.</p>
+                <a href="#community" class="hero-btn">Join the Discussion</a>
+            </div>
             <img src="https://unsplash.com" 
-                 alt="Professional sports stadium under lights" class="feature-img" loading="lazy">
-            <p>Check out the latest updates from your favorite sports podcasts!</p>
-            <p>Follow major league updates at: 
-                <a href="https://espn.com" target="_blank">ESPN</a>, 
-                <a href="https://nfl.com" target="_blank">NFL</a>, and 
-                <a href="https://nba.com" target="_blank">NBA</a>.
-            </p>
+                 alt="Professional Stadium" class="feature-img">
+        </section>
+
+        <section id="podcasts" class="light-zone">
+            <h2>Featured Podcasts</h2>
+            <img src="https://unsplash.com" 
+                 alt="Pro Microphone" class="feature-img">
+            <article class="podcast-card">
+                <h3>Championship Deep Dive</h3>
+                <p>Weekly breakdowns of the world's biggest matchups.</p>
+                <button>Listen Now</button>
+            </article>
         </section>
 
         <section id="scores">
             <h2>Recent Game Scores</h2>
             <table>
                 <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Matchup</th>
-                        <th>Score</th>
-                    </tr>
+                    <tr><th>Matchup</th><th>Result</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Oct 24</td><td>Team A vs Team B</td><td>24 - 17</td></tr>
-                    <tr><td>Oct 25</td><td>Team C vs Team D</td><td>102 - 98</td></tr>
+                    <tr><td>Team A @ Team B</td><td>24 - 17</td></tr>
+                    <tr><td>Team C @ Team D</td><td>102 - 98</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="podcasts">
-            <h2>Featured Podcasts</h2>
-            <!-- IMAGE: High-End Studio Microphone -->
-            <img src="https://unsplash.com" 
-                 alt="Professional recording studio microphone" class="feature-img" loading="lazy">
-            <article>
-                <h3>Podcast Title One</h3>
-                <p>Detailed analysis of this week's highlights and expert commentary.</p>
-            </article>
-        </section>
-
-        <section id="community">
+        <section id="community" class="dark-zone">
             <h2>Community Feed</h2>
-            <!-- IMAGE: Basketball Action Shot -->
             <img src="https://unsplash.com" 
-                 alt="Basketball game action" class="feature-img" loading="lazy">
-            <p>Share your thoughts on the latest games!</p>
-            
+                 alt="Basketball Action" class="feature-img">
             <form id="postForm">
-                <label for="username">Display Name:</label>
                 <input type="text" id="username" placeholder="Your Name" required>
-                <label for="postContent">Your Thoughts:</label>
-                <textarea id="postContent" placeholder="Write your blog post here..." required></textarea>
+                <textarea id="postContent" placeholder="What's your take on the game?" required></textarea>
                 <button type="submit">Post to Community</button>
             </form>
-
-            <div id="postDisplay">
-                <article class="community-post">
-                    <h4>Admin</h4>
-                    <p>Welcome to the Sharpe Sports Report community!</p>
-                </article>
-            </div>
+            <div id="postDisplay"></div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Sharpe Sports Report Community. All Rights Reserved.</p>
+        <p>&copy; 2026 Sharpe Sports Report Community. [Follow us on Social Media](https://twitter.com)</p>
     </footer>
 
     <script>
         const postForm = document.getElementById('postForm');
         const postDisplay = document.getElementById('postDisplay');
-
         postForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('username').value;
@@ -114,7 +95,6 @@
             newPost.innerHTML = `<h4>${name}</h4><p>${content}</p>`;
             postDisplay.prepend(newPost);
             postForm.reset();
-            alert("Success! Your community post has been added.");
         });
     </script>
 </body>
