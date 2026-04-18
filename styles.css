@@ -1,4 +1,11 @@
-/* --- GLOBAL STYLES --- */
+
+.logo {
+    width: 80px !important;
+    height: 80px !important;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
 :root {
     --brand-red: #d40000;
     --dark-bg: #1a1a1a;
