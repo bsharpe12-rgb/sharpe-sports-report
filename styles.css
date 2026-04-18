@@ -1,137 +1,59 @@
-
-.logo {
-    width: 80px !important;
-    height: 80px !important;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
 :root {
+    --faded-blue: #4a90e2; 
     --brand-red: #d40000;
-    --dark-bg: #1a1a1a;
-    --light-bg: #f8f9fa;
 }
 
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
-    background-color: var(--light-bg);
-    color: #333;
-    line-height: 1.6;
+    background-color: #f4f7f6;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
-/* Accessibility: Skip Link */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--brand-red);
-    color: white;
-    padding: 8px;
-    z-index: 2000;
-    transition: top 0.3s;
-}
-.skip-link:focus { top: 0; }
-
-/* --- NAVIGATION --- */
 header {
-    background-color: var(--dark-bg);
-    color: white;
-    padding: 1.5rem 0;
+    background-color: var(--faded-blue);
+    padding: 20px 0;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 4px solid var(--brand-red);
+    border-bottom: 3px solid var(--brand-red);
 }
 
-nav ul { list-style: none; padding: 0; margin: 15px 0 0 0; }
-nav ul li { display: inline-block; margin: 0 10px; }
+header h1 { color: white; margin: 10px 0; font-size: 2rem; }
+nav ul li { display: inline-block; margin: 0 15px; }
+nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+nav a:hover { color: #d1e3ff; }
 
-/* UX: Large Tap Targets (48px height) */
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 15px 10px; 
-    display: inline-block;
-    min-height: 48px;
-}
+/* Sections */
+main { max-width: 900px; margin: auto; padding: 20px; }
+section { padding: 60px 0; border-bottom: 1px solid #ddd; }
 
-.nav-cta {
-    background-color: var(--brand-red);
-    border-radius: 4px;
-}
+.light-zone { background-color: #fff; margin: 0 -20px; padding: 60px 20px; }
+.dark-zone { background-color: #1a1a1a; color: white; padding: 60px 20px; margin: 0 -20px; border-radius: 8px; }
 
-/* --- MAIN CONTENT --- */
-main { max-width: 1000px; margin: auto; padding: 20px; }
-
-.feature-img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+/* Blog Box Styling */
+.blog-box {
+    background: #fff;
+    color: #333;
+    padding: 25px;
     border-radius: 12px;
-    margin: 20px 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.hero-btn, .btn-link {
-    display: inline-block;
-    background-color: var(--brand-red);
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-/* --- ZONES & FORMS --- */
-.light-zone { background-color: white; padding: 40px 20px; margin: 20px -20px; }
-.dark-zone { background-color: var(--dark-bg); color: white; padding: 40px 20px; margin: 20px -20px; }
-
-#postForm input, #postForm textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-button {
-    background-color: var(--brand-red);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-weight: bold;
-    cursor: pointer;
+.blog-post {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-top: 15px;
+    border-left: 5px solid var(--brand-red);
     border-radius: 4px;
 }
 
-/* UX: Feedback Message */
-.hidden { display: none; }
-#successMsg {
-    background: #27ae60;
-    color: white;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    text-align: center;
-}
+/* UI Elements */
+.feature-img { width: 100%; border-radius: 12px; }
+input, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box; }
+button { background: var(--brand-red); color: white; border: none; padding: 15px 30px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+button:hover { background: #b30000; }
 
-/* --- FOOTER --- */
-footer {
-    background: var(--dark-bg);
-    color: #bbb;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 50px;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 600px) {
-    nav ul li { display: block; margin: 10px 0; }
-    h1 { font-size: 1.4rem; }
-}
+footer { text-align: center; padding: 40px; color: #666; }
 
