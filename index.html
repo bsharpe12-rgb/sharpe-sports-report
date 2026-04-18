@@ -3,31 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Meta Title & Description for SEO -->
-    <title>Sharpe Sports Report | The Ultimate Sports Podcast Community</title>
-    <meta name="description" content="Get the latest sports podcast news, game scores, and community discussions at Sharpe Sports Report. Join our sports fan community today.">
+    <title>Sharpe Sports Report | One-Page Hub</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- WCAG: Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
     <header>
         <div class="logo-container">
-            <a href="index.html" aria-label="Sharpe Sports Report Home">
-                <svg class="logo" viewBox="0 0 100 100" xmlns="http://w3.org" role="img">
-                    <title>SSR Logo</title>
-                    <circle cx="50" cy="50" r="48" fill="#d40000" />
-                    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="28" font-weight="bold">SSR</text>
-                </svg>
-            </a>
-            <!-- SEO: Keyword in H1 -->
-            <h1>Sharpe Sports Report: Your Sports Podcast Hub</h1>
+            <svg class="logo" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <circle cx="50" cy="50" r="48" fill="#d40000" />
+                <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="28" font-weight="bold">SSR</text>
+            </svg>
+            <h1>Sharpe Sports Report</h1>
         </div>
-        <nav aria-label="Main Navigation">
+        <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#podcasts">Podcasts</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#episodes">Episodes</a></li>
                 <li><a href="#scores">Scores</a></li>
                 <li><a href="#community">Community</a></li>
                 <li><a href="subscribe.html" class="nav-cta">Subscribe</a></li>
@@ -35,96 +26,87 @@
         </nav>
     </header>
 
-    <main id="main-content">
-        <!-- HERO SECTION -->
+    <main>
+        <!-- HOME SECTION -->
         <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h2>The Pulse of the Game</h2>
-                <p>Join the fastest-growing community for sports podcast fans and expert analysis.</p>
-                <a href="#community" class="hero-btn">Join the Discussion</a>
-            </div>
-            <!-- SEO: Keywords in Image Alt Text -->
-            <img src="stadium.jpg" alt="Modern sports stadium with bright lights" class="feature-img">
+            <h2>The Pulse of the Game</h2>
+            <p>Your all-in-one destination for sports podcasting and live updates.</p>
+            <img src="stadium.jpg" alt="Stadium" class="feature-img">
         </section>
 
-        <!-- PODCASTS SECTION -->
-        <section id="podcasts" class="light-zone">
-            <h2>Featured Sports Podcasts</h2>
-            <img src="mic.jpg" alt="Professional microphone in a sports podcast studio" class="feature-img">
-            <article class="podcast-card">
-                <h3>Championship Deep Dive</h3>
-                <p>Weekly breakdowns of the world's biggest matchups.</p>
-                <a href="subscribe.html" class="btn-link">Get Notified of New Episodes</a>
-            </article>
+        <!-- EPISODES SECTION -->
+        <section id="episodes" class="light-zone">
+            <h2>Latest Episodes</h2>
+            <div class="spotify-container">
+                <!-- Replace 'YOUR_EPISODE_ID' with actual IDs from Spotify Share > Embed -->
+                <iframe style="border-radius:12px" src="https://spotify.com" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <p style="text-align: center; margin-top: 15px;">Catch every breakdown, every week.</p>
         </section>
 
         <!-- SCORES SECTION -->
         <section id="scores">
-            <h2>Recent Game Scores & Updates</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr><th>Matchup</th><th>Date</th><th>Result</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Team A @ Team B</td><td>Oct 24</td><td>24 - 17</td></tr>
-                        <tr><td>Team C @ Team D</td><td>Oct 25</td><td>102 - 98</td></tr>
-                    </tbody>
-                </table>
+            <h2>Live Scores (NFL, NBA, MLB, NCAA)</h2>
+            <div class="scores-placeholder">
+                <!-- You can use a free widget from Scorestream or 365Scores here -->
+                <p><strong>NFL:</strong> Team A 24 - Team B 17 (Final)</p>
+                <p><strong>NBA:</strong> Lakers 110 - Warriors 105 (Final)</p>
+                <p><strong>MLB:</strong> Yankees 5 - Red Sox 3 (Final)</p>
+                <p><strong>NCAA:</strong> Bulldogs 35 - Crimson Tide 31 (Final)</p>
             </div>
         </section>
 
-        <!-- COMMUNITY SECTION -->
+        <!-- COMMUNITY BLOG SECTION -->
         <section id="community" class="dark-zone">
-            <h2>Community Sports Feed</h2>
-            <img src="hoop.jpg" alt="Basketball hoop action shot during a community game" class="feature-img">
-            
-            <!-- Success Message for UX Checklist -->
-            <div id="successMsg" class="hidden">Success! Your thoughts have been posted to the feed.</div>
-
-            <form id="postForm">
-                <label for="username">Display Name:</label>
-                <input type="text" id="username" placeholder="Your Name" required>
-                <label for="postContent">Share your take:</label>
-                <textarea id="postContent" placeholder="What's your take on the latest game?" required></textarea>
-                <button type="submit">Post to Community</button>
-            </form>
-            <div id="postDisplay"></div>
+            <h2>Community Blog</h2>
+            <div class="blog-box">
+                <form id="blogForm">
+                    <input type="text" id="bloggerName" placeholder="Your Name" required>
+                    <textarea id="blogContent" placeholder="What's on your mind today?" rows="4" required></textarea>
+                    <button type="submit">Post to Blog</button>
+                </form>
+                <div id="blogFeed">
+                    <!-- Posts will appear here -->
+                    <article class="blog-post">
+                        <strong>Admin:</strong> Welcome to the new Sharpe Sports Report hub! Post your takes below.
+                    </article>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Sharpe Sports Report. All Rights Reserved.</p>
-            <div class="social-links">
-                <!-- SEO/UX: External Backlinks with Icons (Text placeholders) -->
-                <a href="https://espn.com" target="_blank">ESPN</a> | 
-                <a href="https://nfl.com" target="_blank">NFL</a> | 
-                <a href="https://nba.com" target="_blank">NBA</a>
-            </div>
-        </div>
+        <p>&copy; 2026 Sharpe Sports Report Community.</p>
     </footer>
 
     <script>
-        const postForm = document.getElementById('postForm');
-        const postDisplay = document.getElementById('postDisplay');
-        const successMsg = document.getElementById('successMsg');
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-        postForm.addEventListener('submit', function(e) {
+        // Community Blog Script
+        const blogForm = document.getElementById('blogForm');
+        const blogFeed = document.getElementById('blogFeed');
+
+        blogForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('username').value;
-            const content = document.getElementById('postContent').value;
+            const name = document.getElementById('bloggerName').value;
+            const content = document.getElementById('blogContent').value;
             
             const newPost = document.createElement('article');
-            newPost.className = "community-post";
-            newPost.innerHTML = `<h4>${name}</h4><p>${content}</p>`;
+            newPost.className = "blog-post";
+            newPost.innerHTML = `<strong>${name}:</strong> ${content}`;
             
-            postDisplay.prepend(newPost);
-            postForm.reset();
-            
-            // Show Success Message (UX Requirement)
-            successMsg.classList.remove('hidden');
-            setTimeout(() => successMsg.classList.add('hidden'), 4000);
+            blogFeed.prepend(newPost);
+            blogForm.reset();
         });
     </script>
 </body>
