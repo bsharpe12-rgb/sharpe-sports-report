@@ -3,79 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sharpe Sports Report: Podcast news and community discussions.">
-    <title>Sharpe Sports Report Community</title>
+    <!-- Meta Title & Description for SEO -->
+    <title>Sharpe Sports Report | The Ultimate Sports Podcast Community</title>
+    <meta name="description" content="Get the latest sports podcast news, game scores, and community discussions at Sharpe Sports Report. Join our sports fan community today.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- WCAG: Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
         <div class="logo-container">
-            <a href="index.html">
-                <svg class="logo" viewBox="0 0 100 100" xmlns="http://w3.org">
+            <a href="index.html" aria-label="Sharpe Sports Report Home">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://w3.org" role="img">
+                    <title>SSR Logo</title>
                     <circle cx="50" cy="50" r="48" fill="#d40000" />
                     <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="28" font-weight="bold">SSR</text>
-                    <circle cx="50" cy="50" r="42" fill="none" stroke="white" stroke-width="2" />
                 </svg>
             </a>
-            <h1>Sharpe Sports Report</h1>
+            <!-- SEO: Keyword in H1 -->
+            <h1>Sharpe Sports Report: Your Sports Podcast Hub</h1>
         </div>
-        <nav>
+        <nav aria-label="Main Navigation">
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#podcasts">Podcasts</a></li>
                 <li><a href="#scores">Scores</a></li>
                 <li><a href="#community">Community</a></li>
-                <!-- This link is correct. If it fails, check file naming on GitHub -->
                 <li><a href="subscribe.html" class="nav-cta">Subscribe</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
+        <!-- HERO SECTION -->
         <section id="home" class="hero-section">
             <div class="hero-content">
                 <h2>The Pulse of the Game</h2>
-                <p>Join the fastest-growing community for sports podcast fans.</p>
+                <p>Join the fastest-growing community for sports podcast fans and expert analysis.</p>
                 <a href="#community" class="hero-btn">Join the Discussion</a>
             </div>
-            <!-- RESTORED PROFESSIONAL IMAGE -->
-            <img src="https://unsplash.com" 
-                 alt="Professional Stadium" class="feature-img">
+            <!-- SEO: Keywords in Image Alt Text -->
+            <img src="stadium.jpg" alt="Modern sports stadium with bright lights" class="feature-img">
         </section>
 
+        <!-- PODCASTS SECTION -->
         <section id="podcasts" class="light-zone">
-            <h2>Featured Podcasts</h2>
-            <!-- RESTORED PROFESSIONAL IMAGE -->
-            <img src="https://unsplash.com" 
-                 alt="Pro Microphone" class="feature-img">
+            <h2>Featured Sports Podcasts</h2>
+            <img src="mic.jpg" alt="Professional microphone in a sports podcast studio" class="feature-img">
             <article class="podcast-card">
                 <h3>Championship Deep Dive</h3>
                 <p>Weekly breakdowns of the world's biggest matchups.</p>
-                <button onclick="window.location.href='subscribe.html'">Get Notified</button>
+                <a href="subscribe.html" class="btn-link">Get Notified of New Episodes</a>
             </article>
         </section>
 
+        <!-- SCORES SECTION -->
         <section id="scores">
-            <h2>Recent Game Scores</h2>
-            <table>
-                <thead>
-                    <tr><th>Matchup</th><th>Result</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Team A @ Team B</td><td>24 - 17</td></tr>
-                    <tr><td>Team C @ Team D</td><td>102 - 98</td></tr>
-                </tbody>
-            </table>
+            <h2>Recent Game Scores & Updates</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>Matchup</th><th>Date</th><th>Result</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Team A @ Team B</td><td>Oct 24</td><td>24 - 17</td></tr>
+                        <tr><td>Team C @ Team D</td><td>Oct 25</td><td>102 - 98</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
+        <!-- COMMUNITY SECTION -->
         <section id="community" class="dark-zone">
-            <h2>Community Feed</h2>
-            <!-- RESTORED PROFESSIONAL IMAGE -->
-            <img src="https://unsplash.com" 
-                 alt="Basketball Action" class="feature-img">
+            <h2>Community Sports Feed</h2>
+            <img src="hoop.jpg" alt="Basketball hoop action shot during a community game" class="feature-img">
+            
+            <!-- Success Message for UX Checklist -->
+            <div id="successMsg" class="hidden">Success! Your thoughts have been posted to the feed.</div>
+
             <form id="postForm">
+                <label for="username">Display Name:</label>
                 <input type="text" id="username" placeholder="Your Name" required>
-                <textarea id="postContent" placeholder="What's your take on the game?" required></textarea>
+                <label for="postContent">Share your take:</label>
+                <textarea id="postContent" placeholder="What's your take on the latest game?" required></textarea>
                 <button type="submit">Post to Community</button>
             </form>
             <div id="postDisplay"></div>
@@ -83,21 +94,37 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Sharpe Sports Report Community.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Sharpe Sports Report. All Rights Reserved.</p>
+            <div class="social-links">
+                <!-- SEO/UX: External Backlinks with Icons (Text placeholders) -->
+                <a href="https://espn.com" target="_blank">ESPN</a> | 
+                <a href="https://nfl.com" target="_blank">NFL</a> | 
+                <a href="https://nba.com" target="_blank">NBA</a>
+            </div>
+        </div>
     </footer>
 
     <script>
         const postForm = document.getElementById('postForm');
         const postDisplay = document.getElementById('postDisplay');
+        const successMsg = document.getElementById('successMsg');
+
         postForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('username').value;
             const content = document.getElementById('postContent').value;
+            
             const newPost = document.createElement('article');
             newPost.className = "community-post";
             newPost.innerHTML = `<h4>${name}</h4><p>${content}</p>`;
+            
             postDisplay.prepend(newPost);
             postForm.reset();
+            
+            // Show Success Message (UX Requirement)
+            successMsg.classList.remove('hidden');
+            setTimeout(() => successMsg.classList.add('hidden'), 4000);
         });
     </script>
 </body>
