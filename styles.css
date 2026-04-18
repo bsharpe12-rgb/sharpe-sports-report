@@ -1,85 +1,130 @@
-/* Marketing Enhancements: Visual Hierarchy and Sticky Nav */
+/* --- GLOBAL STYLES --- */
+:root {
+    --brand-red: #d40000;
+    --dark-bg: #1a1a1a;
+    --light-bg: #f8f9fa;
+}
+
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
-    background-color: #f8f9fa;
+    background-color: var(--light-bg);
     color: #333;
+    line-height: 1.6;
 }
 
-header {
-    background-color: #1a1a1a;
+/* Accessibility: Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--brand-red);
     color: white;
-    padding: 1rem 0;
+    padding: 8px;
+    z-index: 2000;
+    transition: top 0.3s;
+}
+.skip-link:focus { top: 0; }
+
+/* --- NAVIGATION --- */
+header {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 1.5rem 0;
     text-align: center;
-    position: sticky; /* Always visible for user engagement */
+    position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 4px solid #d40000;
+    border-bottom: 4px solid var(--brand-red);
 }
 
-.logo { width: 60px; height: 60px; transition: transform 0.3s ease; }
-.logo:hover { transform: scale(1.1); }
+nav ul { list-style: none; padding: 0; margin: 15px 0 0 0; }
+nav ul li { display: inline-block; margin: 0 10px; }
 
-nav ul { list-style: none; padding: 0; margin-top: 10px; }
-nav ul li { display: inline-block; margin: 0 15px; }
-nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px; }
-nav a:hover { color: #d40000; }
-
-/* Call-To-Action (CTA) Button in Nav */
-.nav-cta {
-    background-color: #d40000;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-.hero-section {
-    position: relative;
-    text-align: center;
-    padding-bottom: 40px;
-}
-
-.hero-btn {
-    display: inline-block;
-    background-color: #d40000;
+/* UX: Large Tap Targets (48px height) */
+nav a {
     color: white;
-    padding: 15px 30px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
-    margin-top: 15px;
-    box-shadow: 0 4px 15px rgba(212, 0, 0, 0.4);
+    text-transform: uppercase;
+    padding: 15px 10px; 
+    display: inline-block;
+    min-height: 48px;
 }
+
+.nav-cta {
+    background-color: var(--brand-red);
+    border-radius: 4px;
+}
+
+/* --- MAIN CONTENT --- */
+main { max-width: 1000px; margin: auto; padding: 20px; }
 
 .feature-img {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 12px;
-    margin-top: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Zonal Layout for Engagement */
-.light-zone { background-color: #fff; padding: 40px 0; }
-.dark-zone { background-color: #1a1a1a; color: white; padding: 40px 20px; }
+.hero-btn, .btn-link {
+    display: inline-block;
+    background-color: var(--brand-red);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+}
 
-main { max-width: 1000px; margin: auto; padding: 20px; }
+/* --- ZONES & FORMS --- */
+.light-zone { background-color: white; padding: 40px 20px; margin: 20px -20px; }
+.dark-zone { background-color: var(--dark-bg); color: white; padding: 40px 20px; margin: 20px -20px; }
 
-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-table th { background: #1a1a1a; color: white; padding: 12px; }
-table td { border: 1px solid #ddd; padding: 10px; }
+#postForm input, #postForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
 
 button {
-    background-color: #d40000;
+    background-color: var(--brand-red);
     color: white;
     border: none;
-    padding: 12px 24px;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 15px 30px;
     font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-button:hover { background-color: #b30000; transform: translateY(-2px); }
+/* UX: Feedback Message */
+.hidden { display: none; }
+#successMsg {
+    background: #27ae60;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
 
-footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px; }
+/* --- FOOTER --- */
+footer {
+    background: var(--dark-bg);
+    color: #bbb;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    nav ul li { display: block; margin: 10px 0; }
+    h1 { font-size: 1.4rem; }
+}
 
