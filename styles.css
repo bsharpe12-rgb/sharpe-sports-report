@@ -23,12 +23,19 @@ header {
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* FIX FOR THE OVERSIZED LOGO */
+/* THE ABSOLUTE FIX FOR THE OVERSIZED LOGO */
 .logo {
-    width: 80px;  /* This controls the SVG size */
-    height: 80px;
-    margin: 0 auto;
+    width: 80px !important;  
+    height: 80px !important;
+    max-width: 80px !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+.logo-container {
     display: block;
+    width: 100%;
+    text-align: center;
 }
 
 header h1 { 
@@ -89,6 +96,7 @@ section {
     padding: 25px;
     border-radius: 12px;
     margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .blog-post {
@@ -125,7 +133,7 @@ button {
     border-radius: 6px; 
     cursor: pointer; 
     font-weight: bold; 
-    width: 100%; /* Makes button easy to click on mobile */
+    width: 100%;
 }
 
 button:hover { background: #b30000; }
