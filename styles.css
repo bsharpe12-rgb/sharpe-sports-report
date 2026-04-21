@@ -3,20 +3,15 @@
     --brand-red: #d40000;
     --dark-bg: #1a1a1a;
     --light-bg: #f4f7f6;
-    --white: #ffffff;
 }
 
-/* Global Reset */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     background-color: var(--light-bg);
-    color: #333;
-    line-height: 1.6;
     scroll-behavior: smooth;
 }
 
-/* Header & Navigation */
 header {
     background-color: var(--faded-blue);
     padding: 15px 0;
@@ -25,97 +20,92 @@ header {
     top: 0;
     z-index: 1000;
     border-bottom: 4px solid var(--brand-red);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* THE LOGO FIX */
-header img {
-    max-width: 120px; /* Adjust this to change logo size */
-    height: auto;
+/* FIX FOR THE OVERSIZED LOGO */
+.logo {
+    width: 80px;  /* This controls the SVG size */
+    height: 80px;
+    margin: 0 auto;
     display: block;
-    margin: 0 auto 10px auto;
 }
 
 header h1 { 
-    color: var(--white); 
+    color: white; 
     margin: 5px 0; 
-    font-size: 1.8rem; 
+    font-size: 1.5rem; 
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0 0;
+    margin: 10px 0;
 }
 
-nav ul li { 
-    display: inline-block; 
-    margin: 0 15px; 
-}
+nav ul li { display: inline-block; margin: 0 15px; }
 
 nav a { 
-    color: var(--white); 
+    color: white; 
     text-decoration: none; 
     font-weight: bold; 
-    text-transform: uppercase; 
+    text-transform: uppercase;
     font-size: 0.9rem;
-    transition: color 0.3s ease;
 }
 
-nav a:hover { 
-    color: var(--brand-red); 
-}
+nav a:hover { color: #d1e3ff; }
 
-/* Layout Structure */
+/* Main Content Area */
 main { 
     max-width: 900px; 
-    margin: 0 auto; 
+    margin: auto; 
     padding: 20px; 
 }
 
 section { 
-    padding: 40px 20px; 
-    margin-bottom: 20px;
+    padding: 60px 20px; 
+    border-bottom: 1px solid #ddd; 
 }
 
 .light-zone { 
-    background-color: var(--white); 
+    background-color: #fff; 
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 40px 20px;
 }
 
 .dark-zone { 
     background-color: var(--dark-bg); 
-    color: var(--white); 
+    color: white; 
+    padding: 40px 20px; 
     border-radius: 8px; 
-    padding: 40px;
 }
 
-/* Blog & Content Boxes */
+/* Blog Box Styling */
 .blog-box {
-    background: var(--white);
+    background: #fff;
     color: #333;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin-top: 20px;
 }
 
 .blog-post {
     background: #f9f9f9;
     padding: 15px;
-    margin-top: 20px;
+    margin-top: 15px;
     border-left: 5px solid var(--brand-red);
     border-radius: 4px;
+    text-align: left;
 }
 
-/* Elements */
+/* UI Elements */
 .feature-img { 
     width: 100%; 
-    height: auto;
+    max-height: 400px; 
+    object-fit: cover; 
     border-radius: 12px; 
-    margin-bottom: 15px;
 }
 
 input, textarea { 
@@ -125,29 +115,20 @@ input, textarea {
     border-radius: 6px; 
     border: 1px solid #ccc; 
     box-sizing: border-box; 
-    font-family: inherit;
 }
 
 button { 
     background: var(--brand-red); 
-    color: var(--white); 
+    color: white; 
     border: none; 
-    padding: 12px 25px; 
+    padding: 15px 30px; 
     border-radius: 6px; 
     cursor: pointer; 
     font-weight: bold; 
-    text-transform: uppercase;
-    transition: background 0.3s ease;
+    width: 100%; /* Makes button easy to click on mobile */
 }
 
-button:hover { 
-    background: #b30000; 
-}
+button:hover { background: #b30000; }
 
-footer { 
-    text-align: center; 
-    padding: 40px; 
-    color: #888; 
-    font-size: 0.85rem;
-}
+footer { text-align: center; padding: 40px; color: #666; }
 
