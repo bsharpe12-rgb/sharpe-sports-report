@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharpe Sports Report | One-Page Hub</title>
-    <!-- Versioning helps the browser see your latest CSS changes immediately -->
+    <!-- SEO 1: Descriptive Meta Title with Keywords -->
+    <title>Sharpe Sports Report | NFL, NBA, & MLB Podcast & Live Scores</title>
+    <!-- SEO 2: Meta Description for search results -->
+    <meta name="description" content="Get the latest sports news, live NFL and NBA scores, and deep-dive analysis on the Sharpe Sports Report podcast hub.">
+    
     <link rel="stylesheet" href="styles.css?v=8.0">
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <!-- Professional SVG Logo -->
             <svg class="logo" viewBox="0 0 100 100" width="80" height="80" xmlns="http://w3.org">
                 <circle cx="50" cy="50" r="48" fill="#d40000" />
                 <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="28" font-weight="bold">SSR</text>
@@ -20,9 +22,9 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#episodes">Episodes</a></li>
-                <li><a href="#scores">Scores</a></li>
-                <li><a href="#community">Community</a></li>
+                <li><a href="#episodes">Podcast Episodes</a></li>
+                <li><a href="#scores">Live Scores</a></li>
+                <li><a href="#community">Fan Community</a></li>
                 <li><a href="subscribe.html">Subscribe</a></li>
             </ul>
         </nav>
@@ -31,17 +33,17 @@
     <main>
         <!-- HOME SECTION -->
         <section id="home" class="hero-section">
-            <h2>The Pulse of the Game</h2>
+            <!-- SEO 3: Keyword in H2 -->
+            <h2>The Pulse of the Game: Pro Sports Updates</h2>
             <p>Your all-in-one destination for sports podcasting and live updates.</p>
-            <!-- UPDATED TO YOUR NEW HIGH-RES IMAGE -->
-            <img src="stadium2.jpg" alt="Levi's Stadium" class="feature-img">
+            <!-- SEO 4: Keyword-rich Alt Text for Images -->
+            <img src="stadium2.jpg" alt="Aerial view of Levi's Stadium during a night game" class="feature-img">
         </section>
 
         <!-- EPISODES SECTION -->
         <section id="episodes" class="light-zone">
-            <h2>Latest Episodes</h2>
+            <h2>Latest Sports Podcast Episodes</h2>
             <div class="spotify-container">
-                <!-- Your actual Spotify Podcast player -->
                 <iframe style="border-radius:12px" src="https://spotify.com" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
             <p style="text-align: center; margin-top: 15px;">Catch every breakdown, every week.</p>
@@ -49,7 +51,7 @@
 
         <!-- SCORES SECTION -->
         <section id="scores">
-            <h2>Live Scores</h2>
+            <h2>Real-Time Live Scores</h2>
             <div class="scores-placeholder">
                 <p><strong>NFL:</strong> Team A 24 - Team B 17 (Final)</p>
                 <p><strong>NBA:</strong> Lakers 110 - Warriors 105 (Final)</p>
@@ -60,11 +62,11 @@
 
         <!-- COMMUNITY BLOG SECTION -->
         <section id="community" class="dark-zone">
-            <h2>Community Blog</h2>
+            <h2>Fan Community Blog</h2>
             <div class="blog-box">
                 <form id="blogForm">
                     <input type="text" id="bloggerName" placeholder="Your Name" required>
-                    <textarea id="blogContent" placeholder="What's on your mind today?" rows="4" required></textarea>
+                    <textarea id="blogContent" placeholder="What's your sports take today?" rows="4" required></textarea>
                     <button type="submit">Post to Blog</button>
                 </form>
                 <div id="blogFeed">
@@ -77,11 +79,19 @@
     </main>
 
     <footer>
+        <!-- SEO 5: External Authority Links -->
+        <div class="external-links" style="margin-bottom: 20px;">
+            <p>Stay Updated: 
+                <a href="https://espn.com" target="_blank" rel="noopener">ESPN</a> | 
+                <a href="https://bleacherreport.com" target="_blank" rel="noopener">Bleacher Report</a> | 
+                <a href="https://nfl.com" target="_blank" rel="noopener">NFL.com</a>
+            </p>
+        </div>
         <p>&copy; 2026 Sharpe Sports Report Community.</p>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling logic
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 if(this.getAttribute('href').startsWith('#')) {
@@ -94,19 +104,16 @@
             });
         });
 
-        // Community Blog Script
+        // Blog script
         const blogForm = document.getElementById('blogForm');
         const blogFeed = document.getElementById('blogFeed');
-
         blogForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('bloggerName').value;
             const content = document.getElementById('blogContent').value;
-            
             const newPost = document.createElement('article');
             newPost.className = "blog-post";
             newPost.innerHTML = `<strong>${name}:</strong> ${content}`;
-            
             blogFeed.prepend(newPost);
             blogForm.reset();
         });
